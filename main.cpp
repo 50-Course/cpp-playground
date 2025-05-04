@@ -1,4 +1,5 @@
 // the include delecrate is the import-like statement for working modules
+#include <cassert>
 #include <cstddef>
 #include <cstdio>
 #include <cstring>
@@ -63,6 +64,9 @@ std::string greetMe(std::string name, std::optional<std::string> prefix) {
  */
 std::string learnPointers() {
   std::string people[5] = {"bobby", "gina", "junny", "jonah", "go"};
+  double pi = 3.142;
+
+  double *MathPI = &pi;
 
   // so here we get the memory address
   std::cout << "Memory location of the list of people: " << &people
@@ -71,6 +75,9 @@ std::string learnPointers() {
   // then deference it to get the value at that memory location
   // so for sttarters let's try to get one value
   std::string gina = people[1];
+  std::cout << gina << "is " << *MathPI << " short of today's trade."
+            << std::endl;
+
   return gina;
 }
 
