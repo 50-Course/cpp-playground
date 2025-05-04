@@ -1,7 +1,9 @@
 // the include delecrate is the import-like statement for working modules
+#include <cstddef>
 #include <cstdio>
 #include <cstring>
 #include <iostream>
+#include <optional>
 #include <string>
 
 // WAIT A DAMN MINUTE? WHY DO I HAVE TO MOVE THIS CODE BLOCK UP HERE?
@@ -26,18 +28,32 @@ void learnTypes() {
   //
   // interesting!
   char message[40] = "The amount is";
-  sprintf(message + strlen(message), "%s", name);
-  std::cout << message << std::endl;
+  std::cout << message << someNumber
+            << std::endl; // :eyes: so the `<<` sign can act
+                          // as a contactanation command?
 }
 
 /*
  * This should be the regular greet me function
  * you know let's get to know about function invoking
  */
-std::string greetMe(std::string name) {
+std::string greetMe(std::string name, std::optional<std::string> prefix) {
+
+  if (!prefix.has_value()) {
+    // so here we know it doesn't have a value, we just default to something?
+    prefix = "Hello, ";
+    return prefix.value() + name;
+  }
+
   // WTF? so we can't use `+` string catenation like python or regular
   // languages?
-  return std::cout << "Hello, ", +name << std::endl;
+  return prefix.value() +
+         name; // so when we working with `optional` values form `stdlib`
+               // w need to call the `.has_value()` to check if the variable has
+               // some value - think of it as a data validator like django,
+               // `serializer.is_valid()?` but if it does have a value we would
+               // be able to get it in the function call `.value()` just like
+               // django, `.validated_data`
 }
 
 // so the sample Hello World program
@@ -54,6 +70,8 @@ int main() {
   // cout is the standard output PrintStream
   std::cout << "Hello, World!" << std::endl;
   learnTypes();
+
+    std::cout << greetMe("Eri", "Good Morning,") << std::endl;
 
   // every c progaram must have an exit status
   // 0 here means success
