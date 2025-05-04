@@ -1,4 +1,6 @@
 // the include delecrate is the import-like statement for working modules
+#include <cstdio>
+#include <cstring>
 #include <iostream>
 #include <string>
 
@@ -10,10 +12,22 @@ void learnTypes() {
 
   int x; // should default nullptr, i believe or null or kind of
   char y = 'A';
+  double someNumber = 2.20;
   std::string name = "50-Course"; // ah intersting, so i need to import the
                                   // string module from stdlib to use strings?
 
   std::cout << name << std::endl;
+
+  // WAIT A DAMN MINUTE, SO TO DEFINE ARRAY IT HAS TO BE
+  //
+  // <type> varName<arrySize>?
+  // not like Golang, varName <arraySize><type>?
+  // or like Java, <type><arraySize> varName?
+  //
+  // interesting!
+  char message[40] = "The amount is";
+  sprintf(message + strlen(message), "%s", name);
+  std::cout << message << std::endl;
 }
 
 /*
@@ -21,7 +35,8 @@ void learnTypes() {
  * you know let's get to know about function invoking
  */
 std::string greetMe(std::string name) {
-  // WTF? so we can use string catenation like python or regular languages?
+  // WTF? so we can't use `+` string catenation like python or regular
+  // languages?
   return std::cout << "Hello, ", +name << std::endl;
 }
 
