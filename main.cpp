@@ -81,6 +81,22 @@ std::string learnPointers() {
   return gina;
 }
 
+/**
+ * Memory Allocation?
+ */
+void learnMemoryAllocation() {
+  // so i think we should make this par interesting - how about we make a 3x3
+  // grid?
+
+  std::cout << "Already in the memory allocation function " << std::endl;
+  // first we sould allocate a simple array of 3 numbers;
+  int *arr = new int[3];
+
+  // now let's try to create our grid;
+  std::cout << *arr << std::endl;
+  std::cout << "Exiting the memory allocation function" << std::endl;
+}
+
 // so the sample Hello World program
 //
 // it seems when we want to define a function
@@ -98,6 +114,7 @@ int main() {
 
   std::cout << greetMe("Eri", "Good Morning,") << std::endl;
   std::cout << learnPointers() << std::endl;
+  learnMemoryAllocation();
 
   // every c progaram must have an exit status
   // 0 here means success
