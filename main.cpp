@@ -56,6 +56,24 @@ std::string greetMe(std::string name, std::optional<std::string> prefix) {
                // django, `.validated_data`
 }
 
+/*
+ * Pointers? Le'ts speak in Golang..
+ *  so in Go, * deferences the memory, & gets the memory address, and you define
+ * a new variable like normal let's see what that is in C++
+ */
+std::string learnPointers() {
+  std::string people[5] = {"bobby", "gina", "junny", "jonah", "go"};
+
+  // so here we get the memory address
+  std::cout << "Memory location of the list of people: " << &people
+            << std::endl;
+
+  // then deference it to get the value at that memory location
+  // so for sttarters let's try to get one value
+  std::string gina = people[1];
+  return gina;
+}
+
 // so the sample Hello World program
 //
 // it seems when we want to define a function
@@ -71,7 +89,8 @@ int main() {
   std::cout << "Hello, World!" << std::endl;
   learnTypes();
 
-    std::cout << greetMe("Eri", "Good Morning,") << std::endl;
+  std::cout << greetMe("Eri", "Good Morning,") << std::endl;
+  std::cout << learnPointers() << std::endl;
 
   // every c progaram must have an exit status
   // 0 here means success
