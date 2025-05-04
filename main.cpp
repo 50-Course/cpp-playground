@@ -20,7 +20,10 @@ void learnTypes() {
  * This should be the regular greet me function
  * you know let's get to know about function invoking
  */
-std::string greetMe(std::string name) { return }
+std::string greetMe(std::string name) {
+  // WTF? so we can use string catenation like python or regular languages?
+  return std::cout << "Hello, ", +name << std::endl;
+}
 
 // so the sample Hello World program
 //
