@@ -16,6 +16,12 @@ void learnTypes() {
   std::cout << name << std::endl;
 }
 
+/*
+ * This should be the regular greet me function
+ * you know let's get to know about function invoking
+ */
+std::string greetMe(std::string name) { return }
+
 // so the sample Hello World program
 //
 // it seems when we want to define a function
