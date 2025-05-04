@@ -121,6 +121,29 @@ void learnMemoryAllocation() {
   std::cout << "Exiting the memory allocation function" << std::endl;
 }
 
+/**
+ * OOP
+ */
+void learnOOP() {
+
+  class Person {
+  public:
+    std::string name;
+    int age;
+
+    // wait a damn so to set this.varName i have to do - attr(ArgName)?
+    Person(std::string name, int age) : name(name), age(age) {}
+
+    void introduce() {
+      std::cout << "Hello, " << name << "! Nice to meet you, I am Vostro, I am "
+                << age << "\n";
+    }
+  };
+
+  Person p1("Vim", 22);
+  p1.introduce();
+}
+
 // so the sample Hello World program
 //
 // it seems when we want to define a function
@@ -139,6 +162,7 @@ int main() {
   std::cout << greetMe("Eri", "Good Morning,") << std::endl;
   std::cout << learnPointers() << std::endl;
   learnMemoryAllocation();
+  learnOOP();
 
   // every c progaram must have an exit status
   // 0 here means success
