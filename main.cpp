@@ -92,8 +92,32 @@ void learnMemoryAllocation() {
   // first we sould allocate a simple array of 3 numbers;
   int *arr = new int[3];
 
-  // now let's try to create our grid;
-  std::cout << *arr << std::endl;
+  for (int i = 0; i < 3; ++i) {
+    std::cout << arr[i] << " ";
+  }
+  delete[] arr; // so it appears we can use the `new` to allocate new memory
+                // just like in Go's `.New`. delete works the similarly,
+                // however, Go's gb does that automatically for us
+                // now let's try to create our grid;
+
+  // Let's create the array
+  int grid[3][3];
+
+  for (int i = 0; i < 3; i++) {
+    // we get the current grid then log that to know wwhat grid we are in
+    // int currentGrid = grid[i];
+    // std::cout << "Current grid: " << currentGrid << std::endl;
+
+    for (int j = 0; j < 3; j++) {
+      // then we are now within each grid unit we can populate it or something
+      grid[i][j] = i * 2;
+    }
+  }
+
+  // then we attempt to print it all
+  std::cout << "The entire grid is: " << *grid << std::endl;
+  // delete[][] grid;
+  // std::cout << *arr << std::endl;
   std::cout << "Exiting the memory allocation function" << std::endl;
 }
 
